@@ -15,14 +15,10 @@ jobs:
       - uses: subosito/flutter-action@v1
       - run: |
           flutter pub get
-          flutter test
-      - run: |
           cd example
-          flutter pub get
-          flutter test
           flutter build apk
       - uses: actions/upload-artifact@v2
         with:
           name: example
-          path: example/app/outputs/apk/debug/app-debug.apk
+          path: example/build/app/outputs/flutter-apk/app-release.apk 
 
